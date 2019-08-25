@@ -9,6 +9,9 @@ namespace TestingDemo
 {
     public class Demonstration
     {
+
+        private List<int> lstwholeNo = new List<int>();
+
         /// <summary>
         /// add two nos - public func
         /// </summary>
@@ -51,6 +54,23 @@ namespace TestingDemo
         {
             decimal percentage = (x * 100) / y;
             return percentage;
+        }
+
+        /// <summary>
+        /// check and save list of whole nos
+        /// private static void func setting 
+        /// value of class level private variable         
+        /// </summary>
+        /// <param name="lstNos"></param>
+        private void SetWholeNo(List<int> lstNos)
+        {
+            foreach (var no in lstNos)
+            {
+                if (no >= 0)
+                {
+                    lstwholeNo.Add(no);
+                }
+            }
         }
     }
 }

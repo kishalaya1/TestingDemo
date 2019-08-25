@@ -185,6 +185,37 @@ namespace UnitTestDemo
             singleData.ExpectedResult = result;
             return singleData;
         }
+
+        [Test ,TestCaseSource("SetWholeNoCases")]
+        public void Check_SetWholeNo(SetWholeNoData testData)
+        {
+            //Arrange
+            PrivateObject obj = new PrivateObject(new Demonstration());            
+
+            //Act and Assert            
+            NUnit.Framework.Assert.DoesNotThrow(() => obj.Invoke("SetWholeNo", testData.lstNos));
+            ///fetching the value of class level private variable
+            var result = (List<int>)obj.GetField("lstwholeNo");
+            foreach (int actualNo in result)
+            {
+                NUnit.Framework.Assert.Contains(actualNo, testData.lstExpectedWholeNos, "testing of SetWholeNo function has failed");
+            }            
+        }
+
+        /// <summary>
+        /// test data for "Check_SetWholeNo" function
+        /// </summary>
+        /// <returns></returns>
+        private static List<SetWholeNoData> SetWholeNoCases()
+        {
+            ///various test scenarios
+            List<SetWholeNoData> lstCases = new List<SetWholeNoData>();
+            SetWholeNoData normalCase = new SetWholeNoData();
+            normalCase.lstNos = new List<int> { -2, -1, 0, 1, 2, 3 };
+            normalCase.lstExpectedWholeNos = new List<int> { 0, 1, 2, 3 };
+            lstCases.Add(normalCase);
+            return lstCases;
+        }
     }
 
     #region associated class,struct 
@@ -203,5 +234,10 @@ namespace UnitTestDemo
         public decimal ExpectedResult;
     }
 
+    public struct SetWholeNoData
+    {
+        public List<int> lstNos;
+        public List<int> lstExpectedWholeNos;
+    }
     #endregion
 }

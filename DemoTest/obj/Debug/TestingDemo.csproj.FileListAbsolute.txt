@@ -1,0 +1,5 @@
+J:\DotNetPractice projects\github\TestingDemo\DemoTest\bin\Debug\DemoTest.dll
+J:\DotNetPractice projects\github\TestingDemo\DemoTest\bin\Debug\DemoTest.pdb
+J:\DotNetPractice projects\github\TestingDemo\DemoTest\obj\Debug\TestingDemo.csprojResolveAssemblyReference.cache
+J:\DotNetPractice projects\github\TestingDemo\DemoTest\obj\Debug\DemoTest.dll
+J:\DotNetPractice projects\github\TestingDemo\DemoTest\obj\Debug\DemoTest.pdb
